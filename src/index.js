@@ -1,9 +1,9 @@
 require('dotenv').config();
 
+const logger = require('./logger')
 const express = require('express');
-const bodyParser = require("body-parser");
-
 const app = express();
+const bodyParser = require("body-parser");
 
 // CORS - allow origin from env file
 app.use(function(req, res, next) {

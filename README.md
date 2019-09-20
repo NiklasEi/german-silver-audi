@@ -16,3 +16,5 @@ Run the tests with
 ```bash
 npm run test
 ```
+
+Logfiles can be found in the `logs` directory.
