@@ -5,6 +5,6 @@ module.exports = {
     filename: "dev.sqlite3"
   },
   seeds: {
-    directory: "./bin/dev"
+    directory: "./bin/seeds"
   }
 };
