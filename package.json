@@ -4,6 +4,7 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
+    "migrate": "node_modules/.bin/knex migrate:latest",
     "dev": "cross-env NODE_ENV=development nodemon src/index.js",
     "start": "cross-env NODE_ENV=production node src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -22,6 +23,8 @@
     "body-parser": "^1.19.0",
     "dotenv": "^8.1.0",
     "express": "^4.17.1",
+    "knex": "^0.19.4",
+    "sqlite3": "^4.1.0",
     "winston": "^3.2.1"
   },
   "devDependencies": {
