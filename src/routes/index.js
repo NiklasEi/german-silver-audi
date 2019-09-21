@@ -7,7 +7,7 @@ router.use(require("./newAccount"));
 
 router.use(function(req, res, next) {
   if (res.result) {
-    logger.info("Got %s", JSON.stringify(res.result));
+    logger.info("Returning %s", JSON.stringify(res.result));
     res.status(200).json(res.result);
   }
   next();
