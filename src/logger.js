@@ -21,7 +21,8 @@ const loggerConfig = {
 if (process.env.NODE_ENV !== "production") {
   loggerConfig.transports.push(
     new transports.Console({
-      format: format.simple()
+      format: format.simple(),
+      level: "debug"
     })
   );
 }
