@@ -7,7 +7,7 @@ class Account {
   }
 
   async save() {
-    if(isNaN(data.customerId) || data.customerId < 0) {
+    if(isNaN(this.customerId) || this.customerId < 0) {
       throw new ValidationError("Invalid customer ID")
     }
     const res = await knex.insert({customerId: this.customerId}).into('accounts');
