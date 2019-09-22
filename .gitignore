@@ -1,4 +1,11 @@
 node_modules
+
+# dotenv files
 .env**
+!.env.example
+
+# log directory
 logs
+
+# databases
 *.sqlite3

@@ -4,10 +4,10 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
-    "seed": "node_modules/.bin/knex seed:run",
-    "dev": "cross-env NODE_ENV=development nodemon src/index.js",
-    "start": "node src/index.js",
     "migrate": "node_modules/.bin/knex migrate:latest",
+    "seed": "node_modules/.bin/knex seed:run",
+    "start": "node src/index.js",
+    "dev": "cross-env NODE_ENV=development nodemon src/index.js",
     "test": "cross-env NODE_ENV=test mocha --recursive --exit",
     "test-start": "cross-env NODE_ENV=test node src/index.js"
   },
