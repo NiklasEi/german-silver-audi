@@ -1,5 +1,7 @@
 # German silver audi
 
+[![Build Status](https://travis-ci.org/NiklasEi/german-silver-audi.svg?branch=master)](https://travis-ci.org/NiklasEi/german-silver-audi)
+
 Backend developing challenge for an interview process.
 
 Task: expose two endpoints allowing to create a new account for an existing user and to get user information including accounts and transactions.
