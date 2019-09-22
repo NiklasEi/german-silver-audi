@@ -1,13 +1,15 @@
 const express = require("express");
 const router = express.Router();
 const logger = require("../logger");
-const httpContext = require('express-http-context');
+const httpContext = require("express-http-context");
 const User = require("../models/user");
 const Account = require("../models/account");
 const Transaction = require("../models/transaction");
 
 router.get("/user/:id", async (req, res, next) => {
-  logger.info("GET /user/%s", req.params.id, { reqId: httpContext.get("reqId") });
+  logger.info("GET /user/%s", req.params.id, {
+    reqId: httpContext.get("reqId")
+  });
   try {
     let user = await User.getById(req.params.id);
     // populate accounts and transactions

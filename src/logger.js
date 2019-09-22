@@ -17,7 +17,7 @@ const loggerConfig = {
   exceptionHandlers: [new transports.File({ filename: "logs/error.log" })]
 };
 
-// Unless in production log all level to the console
+// Unless in production log to the console
 if (process.env.NODE_ENV !== "production") {
   loggerConfig.transports.push(
     new transports.Console({

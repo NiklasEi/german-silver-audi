@@ -25,7 +25,7 @@ router.post("/accounts", async (req, res, next) => {
       );
     }
     // verify that the user with the given customerId exists
-    const user = await User.getById(data.customerId);
+    await User.getById(data.customerId);
     const accountId = await new Account(data.customerId).save();
     if (data.amount > 0) {
       await new Transaction({
