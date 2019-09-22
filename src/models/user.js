@@ -1,4 +1,4 @@
-const knex = require('knex')(require('../../knexfile'))
+const knex = require('knex')(require('../../knexfile')[process.env.NODE_ENV || "development"])
 const ValidationError =  require('../errors/validationError')
 
 class User {

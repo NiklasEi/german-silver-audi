@@ -27,4 +27,14 @@ if (process.env.NODE_ENV !== "production") {
   );
 }
 
+// seperate test logs
+if (process.env.NODE_ENV === "test") {
+  loggerConfig.transports = [
+    new transports.File({ filename: "logs/test.log", level: "debug" })
+  ];
+  loggerConfig.exceptionHandlers = [
+    new transports.File({ filename: "logs/test.log" })
+  ];
+}
+
 module.exports = createLogger(loggerConfig);
