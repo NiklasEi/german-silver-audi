@@ -60,6 +60,22 @@ describe("New Account endpoint", function() {
         done();
       });
   });
+  it("should fail to open account with negative balance", function(done) {
+    new User({ name: "Niklas", surname: "Eicker" }).save().then(id => {
+      server
+        .post("/accounts")
+        .send({ customerId: id, amount: -5 })
+        .expect("Content-type", /json/)
+        .expect(400)
+        .end(function(err, res) {
+          should.not.exist(err);
+          should.exist(res);
+          should.exist(res.error);
+          res.status.should.equal(400);
+          done();
+        });
+    });
+  });
   it("should open account for existing user", function(done) {
     new User({ name: "Niklas", surname: "Eicker" }).save().then((id) => {
       server
