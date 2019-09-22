@@ -16,7 +16,7 @@ beforeEach(async () => {
   await knex("transactions").truncate();
   await new User({ name: "Niklas", surname: "Eicker" }).save();
 });
-describe("Accounts", function() {
+describe("Account model", function() {
   it("should be empty before adding entries", function(done) {
     knex("accounts")
       .select()

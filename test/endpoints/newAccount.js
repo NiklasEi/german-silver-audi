@@ -17,7 +17,7 @@ before(async () => {
   await knex("accounts").truncate();
   await knex("transactions").truncate();
 });
-describe("New Account endpoint", function() {
+describe("POST /accounts", function() {
   it("should return error for negative customerId", function(done) {
     server
       .post("/accounts")

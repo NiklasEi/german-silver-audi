@@ -14,7 +14,7 @@ beforeEach(async () => {
   await knex("accounts").truncate();
   await knex("transactions").truncate();
 });
-describe("Transactions", function() {
+describe("Transaction model", function() {
   it("should be empty before adding entries", function(done) {
     knex("transactions")
       .select()

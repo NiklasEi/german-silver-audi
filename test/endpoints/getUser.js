@@ -17,7 +17,7 @@ before(async () => {
   await knex("accounts").truncate();
   await knex("transactions").truncate();
 });
-describe("Get user endpoint", function() {
+describe("GET /user/:id", function() {
   it("should return error for invalid clientId", function(done) {
     server
       .get("/user/gfd")
