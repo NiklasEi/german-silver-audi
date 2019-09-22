@@ -10,10 +10,10 @@ beforeEach(async () => {
   if (process.env.NODE_ENV != "test") {
     throw new Error("Run tests via 'npm run test'");
   }
+  await knex.migrate.latest();
   await knex("users").truncate();
   await knex("accounts").truncate();
   await knex("transactions").truncate();
-  await knex.migrate.latest();
   await new User({ name: "Niklas", surname: "Eicker" }).save();
 });
 describe("Accounts", function() {
