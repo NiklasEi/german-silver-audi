@@ -5,10 +5,11 @@
   "main": "src/index.js",
   "scripts": {
     "seed": "node_modules/.bin/knex seed:run",
-    "migrate": "node_modules/.bin/knex migrate:latest",
     "dev": "cross-env NODE_ENV=development nodemon src/index.js",
-    "start": "cross-env NODE_ENV=production node src/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node src/index.js",
+    "migrate": "node_modules/.bin/knex migrate:latest",
+    "test": "cross-env NODE_ENV=test mocha --recursive --exit",
+    "test-start": "cross-env NODE_ENV=test node src/index.js"
   },
   "repository": {
     "type": "git",
@@ -32,6 +33,9 @@
   },
   "devDependencies": {
     "cross-env": "^6.0.0",
-    "nodemon": "^1.19.2"
+    "mocha": "^6.2.0",
+    "nodemon": "^1.19.2",
+    "should": "^13.2.3",
+    "supertest": "^4.0.2"
   }
 }
