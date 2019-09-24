@@ -4,17 +4,17 @@ const knex = require("knex")(require("../../knexfile")["test"]);
 const should = require("should");
 const Transaction = require("../../src/models/transaction");
 
-beforeEach(async () => {
-  //set test database to empty/clean state
-  if (process.env.NODE_ENV != "test") {
-    throw new Error("Run tests via 'npm run test'");
-  }
-  await knex.migrate.latest();
-  await knex("users").truncate();
-  await knex("accounts").truncate();
-  await knex("transactions").truncate();
-});
 describe("Transaction model", function() {
+  beforeEach(async () => {
+    //set test database to empty/clean state
+    if (process.env.NODE_ENV != "test") {
+      throw new Error("Run tests via 'npm run test'");
+    }
+    await knex.migrate.latest();
+    await knex("users").truncate();
+    await knex("accounts").truncate();
+    await knex("transactions").truncate();
+  });
   it("should be empty before adding entries", function(done) {
     knex("transactions")
       .select()
